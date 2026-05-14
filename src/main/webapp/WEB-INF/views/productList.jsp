@@ -19,11 +19,11 @@
 <script type="text/javascript">
   $(function(){
 	  $("input[value=삭제]").click(function(){
-		  if(confirm("정말 삭제할래요?")){
+		  if(confirm("정말 삭제하겠습니까?")){
 			  let code = $(this).attr("id");
 			  location.href="${pageContext.request.contextPath}/del/"+code; //<-->del?code=value
 		  }
-		     
+		     //삭제 테스트
 	  });
   })
 </script>

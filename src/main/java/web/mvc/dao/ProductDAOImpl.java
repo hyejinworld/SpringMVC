@@ -72,10 +72,18 @@ public class ProductDAOImpl implements ProductDAO {
 				
 	}
 
-	@Override
-	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
+
+    @Override
+    public int updateByCode(ProductDTO productDTO) throws MyErrorException {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getCode().equals(productDTO.getCode())) {
+                list.set(i, productDTO); 
+                return 1;
+            }
+        }
+        return 0; 
+    }
+
 
 }
